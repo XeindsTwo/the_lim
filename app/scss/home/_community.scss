@@ -1,0 +1,192 @@
+.community {
+  &__inner {
+    @include bg;
+    background-image: url("../images/bg-community.webp");
+    background: conic-gradient(from 41deg at 67.37% 89.88%, rgba(0, 0, 0, 0.2) 0deg, rgba(0, 0, 0, 0) 360deg),url("../images/community.svg"),#d5fd02;
+    min-height: 695px;
+    display: flex;
+    flex-direction: column;
+    color: $black;
+    padding: 24px;
+    position: relative;
+    @media (max-width: 1400px) {
+      min-height: 650px;
+    }
+    @media (max-width: 1080px) {
+      min-height: 750px;
+    }
+    @include r($lg) {
+      padding: 24px 20px;
+    }
+  }
+
+  &__content {
+    max-width: 615px;
+    position: relative;
+    z-index: 5;
+    @include r($desktop) {
+      max-width: 470px;
+    }
+    @media (max-width: 1080px) {
+      max-width: 400px;
+    }
+    @media (max-width: 930px) {
+      max-width: 350px;
+    }
+    @media (max-width: 830px) {
+      max-width: 310px;
+    }
+    @include r($tablet) {
+      max-width: 290px;
+    }
+  }
+
+  &__title {
+    color: $black;
+    line-height: 1;
+    margin-bottom: 24px;
+    @include r($desktop) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__text,
+  &__description {
+    line-height: 1.4;
+  }
+
+  &__text {
+    max-width: 530px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    @include r($desktop) {
+      font-size: 18px;
+    }
+    @media (max-width: 1100px) {
+      max-width: 450px;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+    @include r($lg) {
+      margin-bottom: 24px;
+    }
+    @media (max-width: 935px) {
+      font-size: 15px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 52px;
+    margin-top: auto;
+    max-width: 810px;
+    @media (max-width: 1080px) {
+      order: 1;
+    }
+    @include r($tablet) {
+      max-width: 615px;
+      gap: 24px;
+    }
+    @include r($sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    max-width: 410px;
+  }
+
+  &__name {
+    color: $black;
+    margin-bottom: 12px;
+  }
+
+  &__description {
+    color: $green600;
+    @include r($tablet) {
+      font-size: 14px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: -21.5%;
+    right: -85px;
+    @media (max-width: 1550px) {
+      right: -50px;
+      width: 740px;
+      height: 740px;
+    }
+    @media (max-width: 1400px) {
+      width: 700px;
+      height: 700px;
+    }
+    @media (max-width: 1300px) {
+      width: 660px;
+      height: 660px;
+    }
+    @include r($desktop) {
+      width: 630px;
+      height: 630px;
+      top: -19%;
+    }
+    @media (max-width: 1080px) {
+      width: 600px;
+      height: 600px;
+      position: static;
+      order: 0;
+      margin: -315px -70px 0 auto;
+    }
+    @media (max-width: 935px) {
+      margin-top: -260px;
+      margin-right: -68px;
+      width: 570px;
+      height: 570px;
+    }
+    @include r($tablet) {
+      width: 550px;
+      height: 550px;
+      margin-top: -260px;
+    }
+    @media (max-width: 750px) {
+      margin-top: -240px;
+      width: 500px;
+      height: 500px;
+    }
+    @media (max-width: 710px) {
+      margin-top: -40px;
+      margin-right: -56px;
+      width: 480px;
+      height: 480px;
+    }
+    @media (max-width: 650px) {
+      width: 440px;
+      height: 440px;
+    }
+    @media (max-width: 580px) {
+      width: 410px;
+      height: 410px;
+    }
+    @media (max-width: 520px) {
+      width: 380px;
+      height: 380px;
+    }
+    @media (max-width: 480px) {
+      margin-top: -15px;
+      width: 350px;
+      height: 350px;
+      max-width: 350px;
+      margin-right: -45px;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    @media (max-width: 1060px) {
+      display: none;
+    }
+  }
+}

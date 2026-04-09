@@ -1,0 +1,238 @@
+html {
+  overflow-x: hidden;
+
+  &.active {
+    overflow-y: hidden;
+  }
+}
+
+.body {
+  font-family: $golos;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $white;
+  background-color: $black;
+  position: relative;
+  overflow-x: hidden;
+  @include r($phone) {
+    font-size: 14px;
+  }
+
+  &--active {
+    overflow: hidden;
+  }
+}
+
+.title {
+  color: $grey100;
+  font-family: $helvetica;
+  font-size: 54px;
+  line-height: 1;
+  letter-spacing: -2.24px;
+  text-transform: uppercase;
+  font-weight: 700;
+  @media (max-width: 1300px) {
+    font-size: 52px;
+  }
+  @include r($desktop) {
+    font-size: 48px;
+    letter-spacing: -1.8px;
+  }
+  @media (max-width: 1100px) {
+    font-size: 44px;
+    letter-spacing: -1.4px;
+  }
+  @include r($lg) {
+    letter-spacing: -1.2px;
+    font-size: 40px;
+  }
+  @media (max-width: 930px) {
+    font-size: 36px;
+  }
+  @media (max-width: 860px) {
+    font-size: 32px;
+  }
+  @include r($tablet) {
+    font-size: 30px;
+  }
+
+  &--big {
+    font-size: 56px;
+    letter-spacing: -2.56px;
+    @include r($desktop) {
+      font-size: 50px;
+      letter-spacing: -1.8px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 44px;
+    }
+    @include r($lg) {
+      letter-spacing: -1.2px;
+      font-size: 38px;
+    }
+    @media (max-width: 860px) {
+      font-size: 34px;
+    }
+    @include r($tablet) {
+      font-size: 30px;
+    }
+  }
+
+  &--small {
+    font-size: 32px;
+    letter-spacing: -1.6px;
+  }
+
+  &--section {
+    font-size: 24px;
+    letter-spacing: -0.96px;
+    line-height: 1.08;
+  }
+}
+
+.btn {
+  display: inline-block;
+  line-height: 1;
+  min-width: 130px;
+  text-align: center;
+  padding: 13px 22px;
+  border-radius: 50px;
+  border: 2px solid $accent;
+  transition: color .4s, border .4s, background-color .4s;
+  @include r($tablet) {
+    font-size: 14px;
+  }
+
+  &:hover {
+    background-color: $accent;
+    color: $black;
+  }
+
+  &:focus {
+    background-color: transparent;
+    border-color: rgba($white, .5);
+    color: $white;
+  }
+
+  &--black {
+    background-color: $black;
+    color: $white;
+    border-color: transparent;
+
+    &:hover, &:focus {
+      background-color: transparent;
+      color: $black;
+      border-color: $black;
+    }
+  }
+}
+
+.decor-green {
+  padding-right: 5px;
+  padding-top: 1px;
+  color: $black100;
+  border: 3px solid #D5FD02;
+  background: conic-gradient(from 73deg at 65.69% 71.65%, rgba(0, 0, 0, 0.20) 0deg, rgba(0, 0, 0, 0.00) 360deg), #D5FD02;
+  @include r($tablet) {
+    border: none;
+    padding: 2px 1px;
+  }
+  @include r($phone) {
+    padding-top: 3px;
+  }
+
+  &.big {
+    padding: 3px 2px;
+  }
+}
+
+.container {
+  max-width: 1435px;
+  padding: 0 45px;
+  margin: 0 auto;
+  width: 100%;
+  @media (max-width: 1100px) {
+    padding: 0 40px;
+  }
+  @media (max-width: 710px) {
+    padding: 0 30px;
+  }
+  @include r($sm) {
+    padding: 0 20px;
+  }
+  @include r($phone) {
+    padding: 0 16px;
+  }
+}
+
+.indent {
+  margin-top: 135px;
+  @include r($desktop) {
+    margin-top: 120px;
+  }
+  @include r($lg) {
+    margin-top: 100px;
+  }
+  @include r($tablet) {
+    overflow: hidden;
+    margin-top: 80px;
+  }
+}
+
+.logo {
+  transition: opacity .3s, outline .3s;
+  border-radius: 3px;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &:focus {
+    outline: 2px solid $accent;
+  }
+
+  &__img {
+    @include objectCoverBg;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.typewriter {
+  overflow: hidden;
+  clip-path: inset(0 100% 0 0);
+}
+
+.typewriter-two {
+  overflow: hidden;
+  clip-path: inset(0 100% 0 0);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba($accent, 0.2);
+}
+
+::-webkit-scrollbar-thumb,
+::selection {
+  background-color: $accent;
+}
+
+::selection {
+  color: $black;
+}

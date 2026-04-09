@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQVGMSVGK9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-NQVGMSVGK9');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Limited Club здесь высокие показатели — не цель, а стандарт">
+  <meta http-equiv="content-type" content="public, max-age=3600">
+  <title>@title</title>
+  <link rel="icon" href="images/icons/favicon.svg" type="images/x-icon">
+  <link rel="shortcut icon" href="images/icons/favicon.svg" type="images/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+  <script type="text/javascript">
+    (function() {
+      'use strict';
+      var loadedMetrica = false,
+        metricaId = 95751845,
+        timerId;
+
+      if (navigator.userAgent.indexOf('YandexMetrika') > -1) {
+        loadMetrica();
+      } else {
+        window.addEventListener('scroll', loadMetrica, {passive: true});
+        window.addEventListener('touchstart', loadMetrica);
+        document.addEventListener('mouseenter', loadMetrica);
+        document.addEventListener('click', loadMetrica);
+        document.addEventListener('DOMContentLoaded', loadFallback);
+      }
+
+      function loadFallback() {
+        timerId = setTimeout(loadMetrica, 1500);
+      }
+
+      function loadMetrica(e) {
+        if (e && e.type) {
+          console.log(e.type);
+        } else {
+          console.log('DOMContentLoaded');
+        }
+
+        if (loadedMetrica) {
+          return;
+        }
+
+        (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(metricaId, "init", {
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: true
+        });
+
+        loadedMetrica = true;
+        clearTimeout(timerId);
+        window.removeEventListener('scroll', loadMetrica);
+        window.removeEventListener('touchstart', loadMetrica);
+        document.removeEventListener('mouseenter', loadMetrica);
+        document.removeEventListener('click', loadMetrica);
+        document.removeEventListener('DOMContentLoaded', loadFallback);
+      }
+    })();
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/95751845" style="position:absolute; left:-9999px;" alt=""/></div>
+  </noscript>
+</head>
+<body class="body">

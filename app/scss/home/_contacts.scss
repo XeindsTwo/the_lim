@@ -1,0 +1,233 @@
+.contacts {
+  overflow: hidden;
+
+  img {
+    user-select: none;
+  }
+
+  &__top {
+    display: flex;
+    gap: 20px;
+    min-height: 550px;
+    @include r($lg) {
+      min-height: auto;
+      gap: 16px;
+    }
+    @media (max-width: 730px) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    background-color: $black100;
+    padding: 24px;
+    @media (max-width: 1100px) {
+      padding: 20px;
+    }
+    @media (max-width: 730px) {
+      min-width: 260px;
+    }
+
+    &--green {
+      @include bg;
+      overflow: hidden;
+      background: conic-gradient(from 39deg at 65.69% 71.65%, rgba(0, 0, 0, 0.2) 0deg, rgba(0, 0, 0, 0) 360deg),#d5fd02 url("../images/contacts.svg");
+      max-width: 555px;
+      width: 100%;
+      transition: opacity .4s;
+      @media (max-width: 730px) {
+        max-width: 100%;
+        min-height: 340px;
+      }
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+    &--long {
+      width: 100%;
+    }
+  }
+
+  &__list {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    @include r($lg) {
+      gap: 16px;
+    }
+    @media (max-width: 730px) {
+      display: flex;
+      margin-right: -40px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      padding-right: 40px;
+      &::-webkit-scrollbar {
+        height: 0
+      }
+    }
+    @media (max-width: 710px) {
+      margin-right: -30px;
+      padding-right: 30px;
+    }
+    @media (max-width: 610px) {
+      margin-right: -20px;
+      padding-right: 20px;
+    }
+    @include r($phone) {
+      margin-right: -16px;
+      padding-right: 16px;
+    }
+  }
+
+  &__title,
+  &__text {
+    max-width: 550px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    @include r($lg) {
+      font-size: 28px;
+    }
+    @media (max-width: 860px) {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+    @include r($tablet) {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    margin-bottom: 32px;
+    @include r($desktop) {
+      font-size: 18px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 16px;
+    }
+    @media (max-width: 860px) {
+      font-size: 14px;
+    }
+  }
+
+  &__connection {
+    margin-top: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    @media (max-width: 1100px) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 24px;
+    }
+  }
+
+  &__telegram {
+    max-width: 195px;
+  }
+
+  &__img {
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 1.08;
+    letter-spacing: -0.96px;
+    color: $black;
+  }
+
+  &__item-subtext {
+    margin-top: auto;
+    color: $green600;
+  }
+
+  &__job-title,
+  &__text {
+    color: $green200;
+  }
+
+  &__info {
+    &--long {
+      .contacts__job-title {
+        margin-bottom: 0;
+      }
+
+      .contacts__avatar {
+        margin-bottom: 24px;
+        @include r($tablet) {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  &__avatar {
+    @include bg;
+    border-radius: 50%;
+    margin-bottom: 32px;
+    @include r($desktop) {
+      margin-bottom: 24px;
+    }
+    @include r($lg) {
+      width: 56px;
+      height: 56px;
+    }
+    @include r($tablet) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__name {
+    font-family: $helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.96px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    @include r($tablet) {
+      margin-bottom: 8px;
+    }
+    @media (max-width: 860px) {
+      font-size: 21px;
+    }
+  }
+
+  &__job-title {
+    margin-bottom: 40px;
+    line-height: 1.35;
+    @include r($lg) {
+      margin-bottom: 32px;
+    }
+    @media (max-width: 860px) {
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+  }
+
+  &__link {
+    color: $accent;
+    line-height: 1;
+    border-bottom: 1px solid transparent;
+    transition: border .4s, opacity .4s;
+    @media (max-width: 860px) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      border-bottom-color: $accent;
+    }
+
+    &:focus {
+      opacity: .5;
+    }
+  }
+}

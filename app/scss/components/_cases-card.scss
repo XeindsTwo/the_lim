@@ -1,0 +1,97 @@
+.cases-card {
+  background-color: transparent;
+
+  &__link {
+    display: block;
+    transition: opacity .3s, outline .3s;
+    height: 100%;
+
+    &:hover {
+      opacity: .82;
+    }
+
+    &:focus {
+      outline: 2px solid $accent;
+    }
+  }
+
+  &__media {
+    position: relative;
+    min-height: 476px;
+    max-height: 476px;
+    height: 476px;
+    background-color: $black100;
+    @include r($tablet) {
+      min-height: 476px;
+      max-height: 476px;
+      height: 476px;
+    }
+    @include r($sm) {
+      min-height: 476px;
+      max-height: 476px;
+      height: 476px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    @include objectCoverBg;
+    display: block;
+    filter: saturate(.95) contrast(1.02);
+  }
+
+  &__bottom {
+    position: absolute;
+    max-width: 360px;
+    width: 100%;
+    right: -24px;
+    bottom: 0;
+    background-color: $black100;
+    padding: 16px;
+    @include r($tablet) {
+      right: 0;
+    }
+  }
+
+  &__meta {
+    margin-bottom: 20px;
+  }
+
+  &__time {
+    @include flex-align-center(6);
+    font-size: 12px;
+    line-height: 1.2;
+    color: $white;
+    opacity: .9;
+    img {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: -1.28px;
+    @include line-clamp(2);
+  }
+
+  &__text {
+    color: $green200;
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    max-width: 520px;
+    @include line-clamp(2);
+  }
+
+  &__read {
+    font-size: 16px;
+    line-height: 1.35;
+    color: $accent;
+    letter-spacing: .02em;
+  }
+}

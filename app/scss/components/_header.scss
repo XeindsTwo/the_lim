@@ -1,0 +1,156 @@
+.header {
+  position: relative;
+  z-index: 55;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 32px 0;
+    border-bottom: 1px solid $black400;
+    @media (max-width: 1280px) {
+      padding: 25px 0;
+    }
+    @include r($lg) {
+      padding-bottom: 10px;
+      border-bottom: none;
+    }
+    @media (max-width: 660px) {
+      justify-content: space-between;
+    }
+    @include r($phone) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 150;
+  }
+
+  &__nav {
+    margin-left: 64px;
+    @media (max-width: 1280px) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 24px;
+    line-height: 1.35;
+
+    &--mobile {
+      font-size: 20px;
+      flex-direction: column;
+      gap: 40px;
+      @include r($tablet) {
+        gap: 35px;
+      }
+      @include r($sm) {
+        gap: 32px;
+      }
+      @include r($phone) {
+        gap: 28px;
+      }
+
+      .header__link {
+        color: $white;
+        padding: 5px 0;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background-color: $accent;
+          transition: width .4s;
+        }
+
+        &:hover {
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: $green200;
+    transition: color .4s, opacity .4s;
+    @include r($tablet) {
+      font-size: 18px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:focus {
+      opacity: .5;
+    }
+  }
+
+  .widget {
+    margin-left: auto;
+    align-self: center;
+
+    &__header {
+      @media (max-width: 660px) {
+        display: none;
+      }
+
+      &--mobile {
+        display: none;
+        gap: 40px;
+        font-size: 18px;
+        margin-left: 0;
+        align-items: center;
+        align-self: flex-start;
+        @media (max-width: 660px) {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__mobile {
+    z-index: 120;
+    padding: 120px 0 0 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    transition: transform .6s ease-in-out;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($black, .6);
+    backdrop-filter: blur(40px);
+    transform: translateX(-100%);
+    @media (max-width: 1100px) {
+      padding-left: 40px;
+    }
+    @media (max-width: 710px) {
+      padding-left: 30px;
+    }
+    @media (max-width: 610px) {
+      padding-left: 20px;
+    }
+    @include r($phone) {
+      padding-left: 16px;
+    }
+
+    &--active {
+      transform: translateX(0);
+    }
+  }
+}

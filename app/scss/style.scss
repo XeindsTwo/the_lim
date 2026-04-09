@@ -1,0 +1,22 @@
+@import 'vendor/reset';
+@import 'vendor/fonts';
+@import 'vendor/vars';
+@import 'vendor/mixin';
+@import 'vendor/libs';
+@import 'vendor/global';
+
+@import 'components/header';
+@import 'components/footer';
+@import 'components/menu-btn';
+@import 'components/widget';
+@import 'components/cases-card';
+
+@import 'home/start';
+@import 'home/marketoffers';
+@import 'home/community';
+@import 'home/partners';
+@import 'home/exclusive-offers';
+@import 'home/contacts';
+
+@import 'contacts-page';
+@import 'cases';
