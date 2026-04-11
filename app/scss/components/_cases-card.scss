@@ -10,7 +10,7 @@
       opacity: .82;
     }
 
-    &:focus {
+    &:focus-visible {
       outline: 2px solid $accent;
     }
   }
@@ -21,15 +21,10 @@
     max-height: 476px;
     height: 476px;
     background-color: $black100;
-    @include r($tablet) {
-      min-height: 476px;
-      max-height: 476px;
-      height: 476px;
-    }
-    @include r($sm) {
-      min-height: 476px;
-      max-height: 476px;
-      height: 476px;
+    @include r($lg) {
+      min-height: 440px;
+      max-height: 440px;
+      height: 440px;
     }
   }
 
@@ -49,6 +44,13 @@
     bottom: 0;
     background-color: $black100;
     padding: 16px;
+    @media (max-width: 1100px) {
+      right: -14px;
+    }
+    @include r($lg) {
+      right: 0;
+      max-width: 100%;
+    }
     @include r($tablet) {
       right: 0;
     }
@@ -64,10 +66,12 @@
     line-height: 1.2;
     color: $white;
     opacity: .9;
+
     img {
       display: block;
       width: 20px;
       height: 20px;
+      transform: translateY(-1px);
     }
   }
 
@@ -77,6 +81,20 @@
     line-height: 1.1;
     letter-spacing: -1.28px;
     @include line-clamp(2);
+    @include r($desktop) {
+      letter-spacing: -0.98px;
+      font-size: 24px;
+    }
+    @media (max-width: 860px) {
+      font-size: 22px;
+      letter-spacing: -0.56px;
+    }
+    @include r($tablet) {
+      line-height: 1.2;
+    }
+    @include r($phone) {
+      font-size: 20px;
+    }
   }
 
   &__text {

@@ -1,0 +1,129 @@
+.home-cases {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 56px;
+    @include r($lg) {
+      margin-bottom: 34px;
+    }
+    @media (max-width: 680px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    @include r($phone) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title-wrap {
+    @include flex-align-center(24);
+    @include r($sm) {
+      width: 100%;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    @include r($phone) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__nav {
+    @include flex-align-center(8);
+    @include r($phone) {
+      margin-top: 20px;
+    }
+  }
+
+  &__nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba($grey100, .18);
+    color: rgba($grey100, .8);
+    background-color: transparent;
+    transition: border-color .3s, color .3s, background-color .3s, opacity .3s;
+    @include flex-center;
+    @include r($tablet) {
+      width: 44px;
+      height: 44px;
+    }
+
+    &:hover {
+      border-color: rgba($accent, .7);
+      color: $accent;
+      background-color: rgba($accent, .08);
+    }
+
+    &:focus {
+      border-color: $accent;
+      color: $accent;
+      background-color: rgba($accent, .12);
+    }
+
+    span {
+      display: block;
+      font-size: 22px;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: .5;
+    }
+  }
+
+  &__all {
+    margin-left: auto;
+    min-width: 144px;
+    padding: 12px 22px;
+    @include r($lg) {
+      margin-left: 0;
+    }
+    @include r($phone) {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+      @include r($phone) {
+        display: flex;
+      }
+    }
+  }
+
+  &__slider {
+    @include r($tablet) {
+      overflow: visible;
+    }
+
+    &.swiper {
+      overflow: visible;
+    }
+  }
+
+  &__wrapper {
+    align-items: stretch;
+  }
+
+  &__slide {
+    width: 360px;
+    height: auto;
+    @include r($lg) {
+      box-sizing: border-box;
+    }
+  }
+
+  .cases-card {
+    height: 100%;
+  }
+}
