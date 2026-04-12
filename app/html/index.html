@@ -9,7 +9,9 @@ title: 'The Limited Club'
   @include('home/_community.html')
   @include('home/_partners.html')
   @include('home/_exclusive-offers.html')
-  @include('home/_home-cases.html')
+  @include('home/_home-cases.html', {
+  title: 'Кейсы и статьи'
+  })
   @include('home/_contacts.html')
 </main>
 @include('components/_footer.html')

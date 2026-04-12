@@ -1,5 +1,6 @@
 import {header} from './header.js';
 import {footer} from './footer.js';
+import {casesPage} from './cases-page.js';
 
 const swiper = document.querySelector('.home-cases__slider');
 if (swiper) {
@@ -31,3 +32,4 @@ if (swiper) {
 
 header();
 footer();
+casesPage();

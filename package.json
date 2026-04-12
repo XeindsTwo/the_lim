@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@fancyapps/ui": "^6.1.13",
     "gulp-imagemin": "^7.1.0",
     "swiper": "^10.3.1",
     "urix": "^0.1.0"
@@ -9,7 +10,6 @@
   "description": "build Vadim",
   "main": "index.js",
   "devDependencies": {
-    "@fancyapps/fancybox": "^3.5.7",
     "air-datepicker": "^3.1.1",
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
