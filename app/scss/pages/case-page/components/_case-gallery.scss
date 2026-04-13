@@ -1,0 +1,79 @@
+.case-gallery {
+  margin: 40px 0 54px;
+
+  &__main {
+    margin-bottom: 12px;
+
+    &.swiper {
+      overflow: hidden;
+    }
+  }
+
+  &__caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba($white, .7);
+  }
+
+  &__slide {
+    height: 480px;
+    background-color: $black100;
+
+    .case-gallery__link {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__thumbs {
+    max-width: 310px;
+    margin: -52px auto 12px;
+    position: relative;
+    z-index: 2;
+
+    &.swiper {
+      overflow: hidden;
+    }
+  }
+
+  &__thumb {
+    width: 54px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: .72;
+    transition: opacity .3s, border-color .3s;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    &:hover,
+    &.swiper-slide-thumb-active {
+      opacity: 1;
+      border-color: $accent;
+    }
+  }
+
+  > p {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 16px;
+  }
+}
