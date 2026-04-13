@@ -2,13 +2,24 @@
   display: grid;
   gap: 18px;
 
+  @include r($phone) {
+    gap: 12px;
+  }
+
   a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 14px;
-    width: fit-content;
+    width: 100%;
     color: $grey100;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
     transition: color .3s, opacity .3s;
+
+    @include r($phone) {
+      gap: 10px;
+      font-size: 14px;
+    }
 
     &:hover {
       color: $accent;
@@ -30,8 +41,14 @@
     @include flex-center;
     width: 44px;
     height: 44px;
+    flex-shrink: 0;
     border-radius: 50%;
     color: $grey100;
     background-color: #1e1d1d;
+
+    @include r($phone) {
+      width: 38px;
+      height: 38px;
+    }
   }
 }

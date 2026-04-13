@@ -1,6 +1,14 @@
 .case-gallery {
   margin: 40px 0 54px;
 
+  @include r($tablet) {
+    margin: 30px 0 40px;
+  }
+
+  @include r($phone) {
+    margin: 22px 0 28px;
+  }
+
   &__main {
     margin-bottom: 12px;
 
@@ -19,6 +27,22 @@
   &__slide {
     height: 480px;
     background-color: $black100;
+
+    @include r($desktop) {
+      height: 430px;
+    }
+
+    @include r($tablet) {
+      height: 340px;
+    }
+
+    @include r($sm) {
+      height: 290px;
+    }
+
+    @include r($phone) {
+      height: 240px;
+    }
 
     .case-gallery__link {
       width: 100%;
@@ -42,6 +66,16 @@
     position: relative;
     z-index: 2;
 
+    @include r($tablet) {
+      max-width: 280px;
+      margin: -40px auto 12px;
+    }
+
+    @include r($phone) {
+      max-width: 236px;
+      margin: -34px auto 10px;
+    }
+
     &.swiper {
       overflow: hidden;
     }
@@ -64,6 +98,11 @@
       object-fit: cover;
     }
 
+    @include r($phone) {
+      width: 44px;
+      height: 34px;
+    }
+
     &:hover,
     &.swiper-slide-thumb-active {
       opacity: 1;
@@ -75,5 +114,9 @@
     margin-bottom: 0;
     text-align: center;
     font-size: 16px;
+
+    @include r($phone) {
+      font-size: 14px;
+    }
   }
 }

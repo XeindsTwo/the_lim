@@ -121,6 +121,14 @@
     @include r($lg) {
       box-sizing: border-box;
     }
+
+    @include r($sm) {
+      width: min(320px, 92vw);
+    }
+
+    @include r($phone) {
+      width: min(296px, 92vw);
+    }
   }
 
   .cases-card {

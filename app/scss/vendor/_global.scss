@@ -48,13 +48,16 @@ html {
     font-size: 40px;
   }
   @media (max-width: 930px) {
+    letter-spacing: -0.9px;
     font-size: 36px;
   }
   @media (max-width: 860px) {
     font-size: 32px;
+    letter-spacing: -0.7px;
   }
   @include r($tablet) {
     font-size: 30px;
+    letter-spacing: -0.4px;
   }
 
   &--big {

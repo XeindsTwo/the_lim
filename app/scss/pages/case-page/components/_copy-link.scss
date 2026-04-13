@@ -20,6 +20,12 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity .25s, visibility .25s, transform .25s;
+  @include r($phone) {
+    padding: 9px 12px;
+    font-size: 13px;
+    right: 0;
+    top: 70px;
+  }
 
   &.is-visible {
     opacity: 1;
@@ -59,5 +65,15 @@
     width: 18px;
     height: 18px;
     display: block;
+  }
+
+  @include r($phone) {
+    width: 42px;
+    height: 42px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
   }
 }

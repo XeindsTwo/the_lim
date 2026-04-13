@@ -54,14 +54,14 @@
 
   &__list {
     margin-top: 20px;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     @include r($lg) {
       gap: 16px;
     }
     @media (max-width: 730px) {
-      display: flex;
+      display: none;
       margin-right: -40px;
       overflow-x: scroll;
       overflow-y: hidden;

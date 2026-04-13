@@ -231,20 +231,6 @@ timelinePartners.from('.partners__title .letter', {
   ease: "power4.out",
   stagger: 0.03
 });
-timelinePartners.fromTo('#accent-counter', {
-  opacity: 0,
-  y: 50
-}, {
-  opacity: 1,
-  y: 0,
-  duration: 0.35,
-  onStart: function () {
-    const digitalElement = document.querySelector('.partners__digital');
-    animateNumber(digitalElement, 1, 234, 2);
-  }
-}, '-=0.90');
-timelinePartners.from('.partners__places-info', {opacity: 0, y: 50, duration: 0.45}, '-=0.6');
-timelinePartners.from('.partners__digital--all', {opacity: 0, y: 50, duration: 0.35}, '-=0.2');
 timelinePartners.from('.partners__decor', {opacity: 0, y: 90, duration: 0.35}, '-=0.4');
 timelinePartners.from('.partners__link--one', {opacity: 0, y: 50, duration: 0.45}, '-=0.6');
 timelinePartners.from('.partners__link--two', {opacity: 0, y: 50, duration: 0.45}, '-=0.55');
@@ -330,6 +316,31 @@ function createScrollTriggerOffers() {
 
 createScrollTriggerOffers();
 
+/* Home Cases */
+if (document.querySelector('.home-cases')) {
+  splitTextToLetters('.home-cases__title');
+
+  const timelineHomeCases = gsap.timeline({paused: true});
+  timelineHomeCases.from('.home-cases__title .letter', {
+    opacity: 0,
+    duration: 0.08,
+    ease: "power4.out",
+    stagger: 0.02
+  });
+  timelineHomeCases.from('.home-cases__all', {opacity: 0, y: 60, duration: 0.4}, '-=0.4');
+  timelineHomeCases.from('.home-cases__nav-btn', {opacity: 0, y: 40, duration: 0.35, stagger: 0.1}, '-=0.4');
+  timelineHomeCases.from('.home-cases__slide', {opacity: 0, y: 120, duration: 0.5, stagger: 0.12}, '-=0.2');
+
+  ScrollTrigger.create({
+    trigger: '.home-cases',
+    start: 'top 50%',
+    once: true,
+    onEnter: () => {
+      timelineHomeCases.play();
+    },
+  });
+}
+
 /* Contacts */
 splitTextToLetters('.contacts__subtitle');
 
@@ -359,7 +370,7 @@ timelineContacts.from('#telegram-icon', {
 
 ScrollTrigger.create({
   trigger: '.contacts',
-  end: 'bottom 110%',
+  end: 'top 70%',
   once: true,
   onEnter: () => {
     timelineContacts.play();
