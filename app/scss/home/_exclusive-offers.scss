@@ -85,8 +85,11 @@
     @include r($lg) {
       font-size: 24px;
     }
-    @media (max-width: 920px) {
-      font-size: 19px;
+    @include r($phone) {
+      font-size: 22px;
+    }
+    @media (max-width: 420px) {
+      font-size: 20px;
     }
 
     .decor-green {
@@ -183,9 +186,7 @@
     }
     @media (max-width: 920px) {
       font-size: 20px;
-    }
-    @include r($tablet) {
-      font-size: 18px;
+      line-height: 1.1;
     }
     @media (max-width: 740px) {
       max-width: 350px;

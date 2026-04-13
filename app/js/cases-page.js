@@ -1,8 +1,4 @@
 export function casesPage() {
-  Fancybox.bind('[data-fancybox]', {
-    groupAll: false,
-  });
-
   const copyButton = document.querySelector('[data-copy-link]');
   if (!copyButton) return;
 
@@ -26,5 +22,9 @@ export function casesPage() {
     } catch (err) {
       console.error('Ошибка копирования:', err);
     }
+  });
+
+  Fancybox.bind('[data-fancybox]', {
+    groupAll: false,
   });
 }
